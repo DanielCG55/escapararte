@@ -1,5 +1,6 @@
 import "../public/globals.css";
 import { css, Global } from "@emotion/react";
+import { Layout } from "@/components/base/Layout";
 
 export default function MyApp({ Component, pageProps }) {
     return (
@@ -16,7 +17,9 @@ export default function MyApp({ Component, pageProps }) {
         
         `}
             />
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </>
     );
 }

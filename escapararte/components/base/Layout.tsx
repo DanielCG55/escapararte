@@ -2,7 +2,7 @@ import React from "react";
 import { HomePage } from "./HomePage";
 import { Navbar } from "./Navbar";
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
     return (
         <>
             <HomePage />
@@ -12,4 +12,4 @@ const Layout = ({ children }) => {
     );
 };
 
-export default Layout;
+

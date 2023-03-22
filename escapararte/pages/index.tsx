@@ -4,8 +4,6 @@ import { Navbar } from "@/components/base/Navbar";
 export const Index = () => {
     return (
         <>
-            <HomePage />
-            <Navbar />
             <div className="text-center text-5xl mt-36">
                 Bienvenidos a mi galería de arte virtual, dónde todo el mundo
                 puede compartir sus obras.
