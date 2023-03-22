@@ -1,6 +1,22 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../public/globals.css";
+import { css, Global } from "@emotion/react";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+    return (
+        <>
+            <Global
+                styles={`
+                @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Kaushan Script";
+        }
+        
+        `}
+            />
+            <Component {...pageProps} />
+        </>
+    );
 }
