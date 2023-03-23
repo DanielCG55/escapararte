@@ -7,19 +7,20 @@ export const HomePage = () => {
             <Head>
                 <title>Escapararte</title>
             </Head>
-            <div className=" bg-blue-900">
+            <div className=" bg-blue-900 grid place-items-center  gap-4 p-14">
                 <Link
-                    className="text-orange-600 flex  justify-center p-14 text-9xl  hover:text-orange-900"
+                    className="text-orange-600 hover:text-orange-700 text-9xl  "
                     href={"/"}
                 >
-                    ESCAPARARTE
+                    EscaparArte
                 </Link>
-                <p className="text-orange-600 p-4 text-2xl text-right">
+                <Link
+                    className="text-orange-600 hover:text-orange-700  text-2xl  grid place-self-end"
+                    href={"/sections/about_me_page"}
+                >
                     By Daniel Cortina
-                </p>
-                
+                </Link>
             </div>
-            
         </>
     );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { HomePage } from "./HomePage";
 import { Navbar } from "./Navbar";
 
-export const Layout = ({ children }) => {
+export const Layout: React.FC<{ children: any }> = ({ children }) => {
     return (
         <>
             <HomePage />
@@ -11,5 +11,3 @@ export const Layout = ({ children }) => {
         </>
     );
 };
-
-
