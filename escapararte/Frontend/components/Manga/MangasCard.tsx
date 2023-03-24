@@ -4,7 +4,7 @@ export const MangasCard = () => {
     return (
         <>
             <div className="flex m-8 p-20 h-[850px]">
-                <div className="border-8 rounded-3xl box-border grow-0 border-y-orange-400/80 border-x-orange-800/90 relative min-w-[850px]">
+                <div className="border-8 rounded-3xl box-border grow-0 border-y-red-700 border-x-red-600 relative min-w-[850px]">
                     <Image
                         src={"/mando.png"}
                         fill
