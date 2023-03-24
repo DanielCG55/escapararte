@@ -1,4 +1,4 @@
-import fastify from 'fastify';
+import fastify from "fastify";
 import pino from 'pino';
 import { main_app } from './app';
 import { PORT } from './config';
