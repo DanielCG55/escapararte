@@ -8,7 +8,7 @@ export const Navbar = () => {
             <Link href="/sections/manga_page">Mangas</Link>
             <Link href="/sections/oils">Oils</Link>
             <Link href="/sections/digital_draws_pages">Digital Draws</Link>
-            <Link href="/sections/sign_up_page">Sign up</Link>
+            <Link href="/sections/sign_in_page">Sign In</Link>
             <Link href="/sections/about_me_page">About Me</Link>
         </nav>
     );
