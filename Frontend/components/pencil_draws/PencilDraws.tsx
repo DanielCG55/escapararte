@@ -1,7 +1,16 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { CardForm } from "../forms/CardForm";
 import { BackGroundColor } from "../shared/BackGroundColor";
 import { PencilDrawsCard } from "./PencilDrawsCard";
 
 export const PencilDraws = () => {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        axios.get("http://localhost:5000/get_all_cards").then((response) => {
+            setData(response.data);
+        });
+    }, []);
     return (
         <>
             <BackGroundColor bg_color="bg-gray-500/50">
@@ -15,9 +24,22 @@ export const PencilDraws = () => {
                     habéis hecho un dibujo y lo queréis compartir, este es
                     vuestro sitio.
                 </h2>
-                <PencilDrawsCard />
-                <PencilDrawsCard />
-                <PencilDrawsCard />
+                <div className={"flex justify-center"}>
+                    <CardForm />
+                </div>
+                {data && (
+                    <div>
+                        {data.map((e) => (
+                            <PencilDrawsCard
+                                key={e._id}
+                                imageSrc={e.imageSrc}
+                                title={e.title}
+                                author={e.author}
+                                description={e.description}
+                            />
+                        ))}
+                    </div>
+                )}
             </BackGroundColor>
         </>
     );

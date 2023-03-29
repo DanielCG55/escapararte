@@ -1,4 +1,4 @@
-import { Manga } from "@/components/Manga/Manga";
+import { Manga } from "@/components/manga/Manga";
 
 const mangaPage = () => {
     return <Manga />;

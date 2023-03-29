@@ -1,10 +1,8 @@
 {
   "name": "backend",
-  "version": "0.1.0",
-  "private": true,
-  "main": "index.tsx",
+  "version": "1.0.0",
+  "main": "index.js",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "nodemon src/server.ts",
     "seed": "ts-node src/seed.ts"
@@ -12,17 +10,17 @@
   "dependencies": {
     "@fastify/cors": "^8.2.1",
     "@fastify/formbody": "^7.4.0",
-    "@types/http-errors": "^2.0.1",
-    "@types/node": "^18.15.3",
-    "autoprefixer": "^10.4.14",
+    "@fastify/multipart": "^7.5.0",
+    "@types/node": "^18.15.10",
     "dotenv": "^16.0.3",
+    "eslint": "^8.36.0",
+    "eslint-config": "^0.3.0",
     "fastify": "^4.15.0",
-    "fastify-blipp": "^4.0.0",
-    "fastify-plugin": "^4.5.0",
-    "http-errors": "^2.0.0",
-    "mongodb": "^5.1.0",
-    "mongoose": "^7.0.2",
+    "fastify-blipp": "3.1.0",
+    "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
+    "pino": "^8.11.0",
+    "pino-pretty": "^10.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
   }

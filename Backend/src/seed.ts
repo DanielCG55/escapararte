@@ -1,7 +1,7 @@
-import { CardModel } from "./models/card_model";
+import { CardModel } from "../models/card_model";
 import mongoose from "mongoose";
 import { DB_URL } from "./config";
-import { ICardSeed, ICard } from "./types/card";
+import { ICardSeed, ICard } from "../types/card";
 
 const card: ICardSeed = {
     imageSrc: "./anubis.jpg",

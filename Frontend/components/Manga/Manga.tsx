@@ -1,8 +1,16 @@
-import { PencilDrawsCard } from "../pencil_draws/PencilDrawsCard";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { CardForm } from "../forms/CardForm";
 import { BackGroundColor } from "../shared/BackGroundColor";
 import { MangasCard } from "./MangasCard";
 
 export const Manga = () => {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        axios.get("http://localhost:5000/get_all_cards").then((response) => {
+            setData(response.data);
+        });
+    }, []);
     return (
         <>
             <BackGroundColor bg_color="bg-red-700/70">
@@ -16,7 +24,20 @@ export const Manga = () => {
                     habéis hecho un dibujo y lo queréis compartir, este es
                     vuestro sitio.
                 </h2>
-                <MangasCard />
+                <CardForm />
+                {data && (
+                    <div>
+                        {data.map((card) => (
+                            <MangasCard
+                                key={card._id}
+                                imageSrc={card.imageSrc}
+                                title={card.title}
+                                author={card.author}
+                                description={card.description}
+                            />
+                        ))}
+                    </div>
+                )}
             </BackGroundColor>
         </>
     );

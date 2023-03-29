@@ -1,13 +1,24 @@
-
+import axios from "axios";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { CardForm } from "../forms/CardForm";
 import { BackGroundColor } from "../shared/BackGroundColor";
 import { OilsCard } from "./OilsCard";
 
-
 export const Oils = () => {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        axios.get("http://localhost:5000/get_all_cards").then((response) => {
+            setData(response.data);
+        });
+    }, []);
+
     return (
         <>
             <BackGroundColor bg_color="bg-yellow-600/25">
-                <h1 className="flex justify-center text-8xl p-16 text-orange-900">Oils</h1>
+                <h1 className="flex justify-center text-8xl p-16 text-orange-900">
+                    Oils
+                </h1>
                 <h2 className="text-4xl m-16 p-10 text-orange-900">
                     · Como bien indica el nombre, esta sección está dirigida
                     para los dibujos hechos a lápiz. No importa
@@ -15,8 +26,21 @@ export const Oils = () => {
                     habéis hecho un dibujo y lo queréis compartir, este es
                     vuestro sitio.
                 </h2>
-                <OilsCard/>
-                <OilsCard/>
+                <CardForm />
+
+                {data && (
+                    <div>
+                        {data.map((card) => (
+                            <OilsCard
+                                key={card._id}
+                                imageSrc={card.imageSrc}
+                                title={card.title}
+                                author={card.author}
+                                description={card.description}
+                            />
+                        ))}
+                    </div>
+                )}
             </BackGroundColor>
         </>
     );
