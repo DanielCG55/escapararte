@@ -1,7 +1,11 @@
 import { CardGeneric } from "@/types/card";
 import Image from "next/image";
+import { DeleteButton } from "../shared/DeleteButton";
+import { deleteCard } from "@/lib/api";
+
 
 export const DigitalDrawsCard: React.FC<CardGeneric> = ({
+    _id,
     imageSrc,
     title,
     author,
@@ -24,6 +28,12 @@ export const DigitalDrawsCard: React.FC<CardGeneric> = ({
                     <h2 className="text-3xl m-12 text-blue-900/80">{author}</h2>
                     <p className="m-10 text-xl">{description}</p>
                 </div>
+                <DeleteButton
+                    onClick={() => {
+                        deleteCard(_id);
+                        mutate;
+                    }}
+                />
             </div>
         </>
     );

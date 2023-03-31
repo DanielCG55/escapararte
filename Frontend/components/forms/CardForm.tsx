@@ -1,37 +1,37 @@
 import { DefaultButton } from "./DefaultButton";
 import { useForm, FormProvider } from "react-hook-form";
 import { FormInput } from "./FormInput";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { backendAPI } from "@/lib/api";
+import { CardCategory } from "@/types/category";
 
-// Example 3 Fo
-
-export const CardForm = () => {
+export const CardForm: React.FC<{ category: CardCategory }> = ({
+    category,
+}) => {
     const methods = useForm();
 
     const {
-        
         handleSubmit,
-        watch,
         formState: { errors, isSubmitSuccessful },
     } = methods;
 
-    const Submit = handleSubmit(async (data) => {
-        await axios.post("http://localhost:5000/create_card", {
-            ...data,
-            imageSrc: "/logo.png",
-            origin: window.location.href,
+    const Submit = (category: string) =>
+        handleSubmit(async (data) => {
+            console.log({ ...data, imageSrc: "/logo.png", category });
+            await backendAPI.post("/create_card", {
+                ...data,
+                imageSrc: "/logo.png",
+                category,
+            });
         });
-    });
 
-    const currentImage = watch("imageSrc");
-    const currentTitle = watch("title");
-    const currentAuthor = watch("author");
-    const currentDescription = watch("description");
+    // const currentImage = watch("imageSrc");
+    // const currentTitle = watch("title");
+    // const currentAuthor = watch("author");
+    // const currentDescription = watch("description");
 
     return (
         <>
-            <form className="flex gap-5" onSubmit={Submit}>
+            <form className="flex gap-5 m-10" onSubmit={Submit(category)}>
                 <FormProvider {...methods}>
                     <FormInput
                         name={"title"}

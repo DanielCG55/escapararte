@@ -5,18 +5,13 @@ type ButtonType = "button" | "submit" | "reset";
 type ButtonVariant = "color" | "normal";
 
 interface DeleteButtonProps {
-    children: any;
-    onClick?: any;
+    onClick: any;
     selected?: boolean;
     type?: ButtonType;
     variant?: ButtonVariant;
 }
 
-
-
-
 export const DeleteButton: React.FC<DeleteButtonProps> = ({
-    children,
     onClick,
     selected,
     type,
@@ -33,8 +28,9 @@ export const DeleteButton: React.FC<DeleteButtonProps> = ({
             )}
             onClick={onClick}
             type={type}
+            //TODO: Instalar react icons para los iconos
         >
-            {children}
+            Delete
         </button>
     );
 };

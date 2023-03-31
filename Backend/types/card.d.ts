@@ -5,7 +5,5 @@ export interface ICard extends Document {
     title: string;
     author: string;
     description: string;
-    origin: string;
+    category: string;
 }
-
-

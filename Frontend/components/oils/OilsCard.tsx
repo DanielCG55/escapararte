@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { CardGeneric } from "@/types/card";
+import { DeleteButton } from "../shared/DeleteButton";
+import { deleteCard } from "@/lib/api";
+
 
 export const OilsCard: React.FC<CardGeneric> = ({
+    _id,
     imageSrc,
     title,
     author,
     description,
-    
 }) => {
     return (
         <>
@@ -27,6 +30,12 @@ export const OilsCard: React.FC<CardGeneric> = ({
                         {description}
                     </p>
                 </div>
+                <DeleteButton
+                    onClick={() => {
+                        deleteCard(_id);
+                        mutate;
+                    }}
+                />
             </div>
         </>
     );

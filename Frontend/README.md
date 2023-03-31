@@ -1,93 +1,83 @@
-Dragon Ball Game
-Mi primer proyecto de Core Code School
+# EscaparArte
 
-    Click para probar el juego
+> Proyecto Final de CODE CORE School 
 
-Indice:
+## Indice
 
-    Dragon ball game
-    Indice:
-        1. Título del Juego:
-        2. Imágenes y vídeos:
-        3. Motivación del proyecto:
-        4. Acceso directo al juego:
-        5. Tabla de contenidos o índice:
-        6. Manual de instalación y deployment:
-        7. Ejemplos de código:
-        8. Entornos de ejecución:
-        9. Listado de paquetes y dependencias:
-        10. Agradecimientos:
-        11. Otras consideraciones:
+<!-- TODO -->
+1. [Título de la página](#título-de-la-página)
+2. Imágenes y vídeos
+3. Motivación del proyecto
+4. Acceso directo a la página
+5. Tabla de contenidos o índice
+6. Manual de instalación y deployment
+7. Ejemplos de código
+8. Entornos de ejecución
+9. Listado de paquetes y dependencias
+10. Agradecimientos
+11. Otras consideraciones
 
-1. Título del Juego:
+## Título de la página
 
-dragon-ball-game
-2. Imágenes y vídeos:
+EscaparArte
 
-cellarena
-3. Motivación del proyecto:
+## Imágenes y vídeos
 
-Como fan de Dragon Ball desde pequeño, he querido crear este juego a modo de homenaje.
-4. Instrucciones del juego:
+## Motivación del proyecto
 
-Usar las flechas de dirección para mover al personaje. Pulsar la tecla "espacio" para disparar.
-5. Manual de instalación y deployment:
+Una de mis aficiones es el dibujo. Mi padre es pintor amateur y tengo amigos de dibujan muy bien, así que pensé en crear una especie de galería virtual, para compartir sus creaciones.
 
-Clone the repository:
-    git clone https://danielcg55.github.io/dragon-ball-game/
+## Ejemplos de código
 
-Initiate npm:
-    npm init
+```tsx
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { CardForm } from "../forms/CardForm";
+import { BackGroundColor } from "../shared/BackGroundColor";
+import { PencilDrawsCard } from "./PencilDrawsCard";
+import Image from "next/image";
 
-Or use this instead:
-    npm i yarn
-
-Install dependencies:
-    yarn install, yarn add vite
-
-Execute the project:
-    yarn run dev
-
-7. Ejemplos de código:
-
-constructor(props: InitialEnemyManagerProps) {
-    super({ x: 800, y: 800 });
-    this.ammoManager = props.ammoManager;
-    this.dead = new Audio();
-    this.dead.src = "celljr.wav";
-    this.dead.volume = 1;
-
-    let time = 100;
-    let enemy: Enemy;
-    let createEnemies = () => {
-        for (let i = 1; i > 0; i--) {
-            enemy = new Enemy({
-                position: {
-                    x: Math.random() * (1000 - 600) + 600,
-                    y: Math.random() * (500 - 100) + 100,
-                },
-                size: { w: 70, h: 70 },
+export const PencilDraws = () => {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        axios
+            .get("http://localhost:5000/get_all_cards", {
+                params: { origin: window.location.href },
+            })
+            .then((response) => {
+                setData(response.data);
             });
-            this.enemies.push(enemy);
-        }
-    };
+    }, []);
+    return (
+        <>
+            <BackGroundColor bg_color="bg-gray-500/50">
+                <div className="flex flex-col bg-[url('/dibujo.avif')] bg-fixed bg-contain w-full">
+                    <div className="flex flex-col justify-center items-center">
+                        <h1 className="flex justify-center text-8xl p-16">
+                            Pencil Draws
+                        </h1>
+                        <h2 className="text-4xl m-16 p-10">
+                            · Como bien indica el nombre, esta sección está
+                            dirigida para los dibujos hechos a lápiz. No importa
+                            dónde(servilletas, papeles viejos, libretas
+                            antiguas), si habéis hecho un dibujo y lo queréis
+                            compartir, este es vuestro sitio.
+                        </h2>
+                        <CardForm />
+```
 
-8. Entornos de ejecución:
+## Entornos de ejecución
 
     Visual Studio Code
 
-9. Listado de paquetes y dependencias:
+## Listado de paquetes y dependencias
 
-    Node package manager: npm
+-   Package Manager: yarn
 
-    To run the HTML: Vite
+-   Lenguajes: Typescript, CSS, HTML
 
-    Lenguajes de programación: typescript
+<!-- -   Dependencias: TODO -->
 
-    ts-yarn-dev
+## Agradecimientos
+A Juanpa por la paciencia
 
-    MDN Api Canvas
-
-10. Agradecimientos:
-
-Pues los agradecimientos són muy sencillos. Gracias a mi compañera Saray, por siempre prestarme su ayuda. Gracias a Juan Pablo por no rendirse conmigo y gracias a Marc por creer que era capaz de hacerlo. Gracias!

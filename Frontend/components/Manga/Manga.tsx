@@ -1,20 +1,12 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { CardGeneric } from "@/types/card";
 import { CardForm } from "../forms/CardForm";
 import { BackGroundColor } from "../shared/BackGroundColor";
 import { MangasCard } from "./MangasCard";
+import { useCardList } from "@/hooks/context/useCardList";
 
 export const Manga = () => {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/get_all_cards", {
-                params: { origin: window.location.href },
-            })
-            .then((response) => {
-                setData(response.data);
-            });
-    }, []);
+    const { data, mutate } = useCardList("manga");
+
     return (
         <>
             <BackGroundColor bg_color="bg-red-700/70">
@@ -30,18 +22,18 @@ export const Manga = () => {
                             antiguas), si habéis hecho un dibujo y lo queréis
                             compartir, este es vuestro sitio.
                         </h2>
-                        <CardForm />
+                        <CardForm category="manga" />
                     </div>
                     {data && (
                         <div>
-                            {data.map((card) => (
+                            {data.map((card: CardGeneric) => (
                                 <MangasCard
                                     key={card._id}
                                     imageSrc={"/freezer.jpg"}
                                     title={card.title}
                                     author={card.author}
                                     description={card.description}
-                                    origin={card.origin}
+                                    category={card.category}
                                 />
                             ))}
                         </div>

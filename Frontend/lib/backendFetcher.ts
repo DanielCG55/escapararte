@@ -1,10 +1,6 @@
-import { backendAPI } from './api';
+import { backendAPI } from "./api";
 
-export const backendFetcher = (token: string) => async (endpoint: string) => {
-    const res = await backendAPI.get(endpoint, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
+export const backendFetcher = async (endpoint: string) => {
+    const res = await backendAPI.get(endpoint);
     return res.data;
 };

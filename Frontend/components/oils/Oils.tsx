@@ -1,22 +1,11 @@
-import axios from "axios";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCardList } from "@/hooks/context/useCardList";
 import { CardForm } from "../forms/CardForm";
 import { BackGroundColor } from "../shared/BackGroundColor";
 import { OilsCard } from "./OilsCard";
+import { CardGeneric } from "@/types/card";
 
 export const Oils = () => {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/get_all_cards", {
-                params: { origin: window.location.href },
-            })
-            .then((response) => {
-                setData(response.data);
-            });
-    }, []);
-
+    const { data, mutate } = useCardList("oil");
     return (
         <>
             <BackGroundColor bg_color="bg-yellow-600/25">
@@ -32,18 +21,18 @@ export const Oils = () => {
                             antiguas), si habéis hecho un dibujo y lo queréis
                             compartir, este es vuestro sitio.
                         </h2>
-                        <CardForm />
+                        <CardForm category="oil" />
                     </div>
                     {data && (
                         <div>
-                            {data.map((card) => (
+                            {data.map((card: CardGeneric) => (
                                 <OilsCard
                                     key={card._id}
                                     imageSrc={"/oleo.jpg"}
                                     title={card.title}
                                     author={card.author}
                                     description={card.description}
-                                    origin={card.origin}
+                                    category={card.category}
                                 />
                             ))}
                         </div>

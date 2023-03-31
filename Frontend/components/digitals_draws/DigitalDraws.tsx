@@ -1,24 +1,16 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { CardGeneric } from "@/types/card";
 import { CardForm } from "../forms/CardForm";
 import { BackGroundColor } from "../shared/BackGroundColor";
 import { DigitalDrawsCard } from "./DigitalDrawsCard";
+import { useCardList } from "@/hooks/context/useCardList";
 
 export const DigitalDraws = () => {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/get_all_cards", {
-                params: { origin: window.location.href },
-            })
-            .then((response) => {
-                setData(response.data);
-            });
-    }, []);
+    const { data, mutate } = useCardList("digital");
+
     return (
         <>
             <BackGroundColor bg_color="bg-orange-500/50">
-                <div className="flex flex-col bg-[url('/azul.webp')] bg-contain bg-fixed w-fill">
+                <div className="bg-[url('/azul.webp')] bg-cover bg-fixed">
                     <div className="flex flex-col justify-center items-center">
                         <h1 className="flex justify-center text-8xl p-16 text-blue-900/90">
                             Digital Draws
@@ -30,18 +22,18 @@ export const DigitalDraws = () => {
                             antiguas), si habéis hecho un dibujo y lo queréis
                             compartir, este es vuestro sitio.
                         </h2>
-                        <CardForm />
+                        <CardForm category="digital" />
                     </div>
                     {data && (
                         <div>
-                            {data.map((card) => (
+                            {data.map((card: CardGeneric) => (
                                 <DigitalDrawsCard
                                     key={card._id}
                                     imageSrc={"/gohan2.jpg"}
                                     title={card.title}
                                     author={card.author}
                                     description={card.description}
-                                    origin={card.origin}
+                                    category={card.category}
                                 />
                             ))}
                         </div>

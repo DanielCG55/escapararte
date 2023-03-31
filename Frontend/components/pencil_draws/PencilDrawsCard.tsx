@@ -1,13 +1,18 @@
 import { CardGeneric } from "@/types/card";
 import Image from "next/image";
+import { DeleteButton } from "../shared/DeleteButton";
 
-export const PencilDrawsCard: React.FC<CardGeneric> = ({
+
+
+export const PencilDrawsCard: React.FC<CardGeneric & { onClick: any }> = ({
+    _id,
     imageSrc,
     title,
     author,
     description,
-    origin,
+    onClick,
 }) => {
+    
     return (
         <>
             <div className="flex m-8 p-20 h-[850px]">
@@ -19,12 +24,12 @@ export const PencilDrawsCard: React.FC<CardGeneric> = ({
                         className="object-contain "
                     />
                 </div>
-
                 <div className="border-2 border-transparent box-border">
                     <h1 className="text-6xl m-6">{title}</h1>
                     <h2 className="text-3xl m-12">{author}</h2>
                     <p className="m-10 text-xl">{description}</p>
                 </div>
+                <DeleteButton onClick={onClick} />
             </div>
         </>
     );
