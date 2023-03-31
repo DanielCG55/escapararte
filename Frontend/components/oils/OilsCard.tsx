@@ -6,6 +6,7 @@ export const OilsCard: React.FC<CardGeneric> = ({
     title,
     author,
     description,
+    
 }) => {
     return (
         <>
@@ -15,7 +16,7 @@ export const OilsCard: React.FC<CardGeneric> = ({
                         src={imageSrc}
                         fill
                         alt=""
-                        className="object-cover"
+                        className="object-contain"
                     />
                 </div>
 

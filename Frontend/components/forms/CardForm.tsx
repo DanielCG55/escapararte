@@ -2,8 +2,9 @@ import { DefaultButton } from "./DefaultButton";
 import { useForm, FormProvider } from "react-hook-form";
 import { FormInput } from "./FormInput";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
-// Example 3 Form - React Hook Form
+// Example 3 Fo
 
 export const CardForm = () => {
     const methods = useForm();
@@ -15,9 +16,12 @@ export const CardForm = () => {
         formState: { errors, isSubmitSuccessful },
     } = methods;
 
-    const submit = handleSubmit(async (data) => {
-        await axios.post("http://localhost:5000/create_card", data);
-        console.log(data);
+    const Submit = handleSubmit(async (data) => {
+        await axios.post("http://localhost:5000/create_card", {
+            ...data,
+            imageSrc: "/logo.png",
+            origin: window.location.href,
+        });
     });
 
     const currentImage = watch("imageSrc");
@@ -27,38 +31,21 @@ export const CardForm = () => {
 
     return (
         <>
-            <form className="flex   gap-5 w-full " onSubmit={submit}>
-                <label htmlFor="img">Click here tu upload your image:</label>
-                <input
-                    type="file"
-                    id="img"
-                    name="img"
-                    accept="image/*"
-                    onChange={(e) =>
-                        methods.setValue("imageSrc", e.target.files[0])
-                    }
-                />
-
+            <form className="flex gap-5" onSubmit={Submit}>
                 <FormProvider {...methods}>
                     <FormInput
-                        name={"imageSrc"}
-                        label={`Image to upload`}
-                        required={"Add the image its necessary"}
-                    />
-
-                    <FormInput
                         name={"title"}
-                        label={"title of the picture"}
+                        label={"Title"}
                         required={"Please name your creation"}
                     />
                     <FormInput
                         name={"author"}
-                        label={"author"}
+                        label={"Author"}
                         required={"Your creator name"}
                     />
                     <FormInput
                         name={"description"}
-                        label={"description of the picture"}
+                        label={"Description"}
                         required={
                             "Introduce your creation with a little description"
                         }

@@ -6,14 +6,14 @@ export const create_card_plugin: FastifyPluginAsync = async (app) => {
     app.post<{
         Body: ICard;
     }>("/create_card", async (request, reply) => {
-        const { imageSrc, title, author, description } = request.body;
+        const { imageSrc, title, author, description, origin } = request.body;
 
-        console.log(imageSrc, title, author, description);
         await CardModel.create({
             imageSrc,
             title,
             author,
             description,
+            origin,
         });
 
         return {

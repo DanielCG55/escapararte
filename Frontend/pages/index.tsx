@@ -1,7 +1,7 @@
 export const Index = () => {
     return (
         <>
-            <div>
+            <div className="bg-[url('/lienzo.avif')] h-full ">
                 <p className="text-center text-5xl mt-36 ">
                     Bienvenidos a mi galería de arte virtual, dónde todo el
                     mundo puede compartir sus obras.

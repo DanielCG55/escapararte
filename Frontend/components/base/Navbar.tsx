@@ -1,6 +1,9 @@
+import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
 export const Navbar = () => {
+    const { user } = useUser();
+
     return (
         <nav className="flex border-8 border-y-slate-400 border-x-slate-500 bg-slate-300  justify-between p-10 text-4xl sticky top-0 z-50">
             <Link href={"/"} className="hover:text-orange-600">
@@ -24,18 +27,23 @@ export const Navbar = () => {
             >
                 Digital Draws
             </Link>
-            <Link
-                href="/sections/sign_in_page"
-                className="hover:text-orange-600"
-            >
-                Sign In
-            </Link>
+
             <Link
                 href="/sections/about_me_page"
                 className="hover:text-orange-600"
             >
                 About Me
             </Link>
+            {!user && (
+                <Link href="/api/auth/login" className="hover:text-orange-600">
+                    Sign In
+                </Link>
+            )}
+            {user && (
+                <Link href="/api/auth/logout" className="hover:text-orange-600">
+                    Logout
+                </Link>
+            )}
         </nav>
     );
 };

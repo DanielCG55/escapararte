@@ -7,6 +7,7 @@ const schema = new Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
     description: { type: String, required: true },
+    origin: { type: String, required: true },
 });
 
 export const CardModel = mongoose.model<ICard>("card", schema);

@@ -15,7 +15,7 @@ export const DigitalDrawsCard: React.FC<CardGeneric> = ({
                         src={imageSrc}
                         fill
                         alt=""
-                        className=" object-cover "
+                        className=" object-contain "
                     />
                 </div>
 

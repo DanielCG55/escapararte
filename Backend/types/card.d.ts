@@ -5,11 +5,7 @@ export interface ICard extends Document {
     title: string;
     author: string;
     description: string;
+    origin: string;
 }
 
-export interface ICardSeed {
-    imageSrc: string;
-    title: string;
-    author: string;
-    description: string;
-}
+

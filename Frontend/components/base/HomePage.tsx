@@ -9,9 +9,9 @@ export const HomePage = () => {
                 <link rel="icon" href="/logo.png" />
                 <title>Escapararte</title>
             </Head>
-            <div className=" bg-blue-900 grid place-items-center  gap-4 p-14 ">
+            <div className=" bg-blue-900 grid place-items-center  gap-4 p-14 bg-[url('/fondo.jpg')] h-full ">
                 <Link
-                    className="text-orange-600/95 hover:text-orange-700 text-9xl  "
+                    className="  text-orange-600/80 hover:text-orange-800 text-9xl "
                     href={"/"}
                 >
                     EscaparArte
