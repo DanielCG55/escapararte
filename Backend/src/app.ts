@@ -6,10 +6,13 @@ import cors from "@fastify/cors";
 import { create_card_plugin } from "../routes/cards/create_card";
 import { get_card_plugin } from "../routes/cards/get_card";
 import fastifyMultipart from "@fastify/multipart";
+import { delete_card_plugin } from "../routes/cards/delete_card";
+
 
 const cards_plugin: FastifyPluginAsync = async (app) => {
     await app.register(create_card_plugin);
     await app.register(get_card_plugin);
+    await app.register(delete_card_plugin);
 };
 
 export const main_app: FastifyPluginAsync = async (app) => {

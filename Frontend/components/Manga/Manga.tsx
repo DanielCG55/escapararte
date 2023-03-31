@@ -18,33 +18,35 @@ export const Manga = () => {
     return (
         <>
             <BackGroundColor bg_color="bg-red-700/70">
-                <div className="flex flex-col justify-center items-center">
-                    <h1 className="flex justify-center text-8xl p-16 text-slate-50/80">
-                        Mangas
-                    </h1>
-                    <h2 className="text-4xl m-16 p-10 text-slate-50/80">
-                        · Como bien indica el nombre, esta sección está dirigida
-                        para los dibujos hechos a lápiz. No importa
-                        dónde(servilletas, papeles viejos, libretas antiguas),
-                        si habéis hecho un dibujo y lo queréis compartir, este
-                        es vuestro sitio.
-                    </h2>
-                    <CardForm />
-                </div>
-                {data && (
-                    <div>
-                        {data.map((card) => (
-                            <MangasCard
-                                key={card._id}
-                                imageSrc={"/freezer.jpg"}
-                                title={card.title}
-                                author={card.author}
-                                description={card.description}
-                                origin={card.origin}
-                            />
-                        ))}
+                <div className="bg-[url('/red.png')] bg-cover bg-fixed">
+                    <div className="flex flex-col justify-center items-center">
+                        <h1 className="flex justify-center text-8xl p-16 text-slate-50/80">
+                            Mangas
+                        </h1>
+                        <h2 className="text-4xl m-16 p-10 text-slate-50/80">
+                            · Como bien indica el nombre, esta sección está
+                            dirigida para los dibujos hechos a lápiz. No importa
+                            dónde(servilletas, papeles viejos, libretas
+                            antiguas), si habéis hecho un dibujo y lo queréis
+                            compartir, este es vuestro sitio.
+                        </h2>
+                        <CardForm />
                     </div>
-                )}
+                    {data && (
+                        <div>
+                            {data.map((card) => (
+                                <MangasCard
+                                    key={card._id}
+                                    imageSrc={"/freezer.jpg"}
+                                    title={card.title}
+                                    author={card.author}
+                                    description={card.description}
+                                    origin={card.origin}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
             </BackGroundColor>
         </>
     );

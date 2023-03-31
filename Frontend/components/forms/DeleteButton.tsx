@@ -4,7 +4,7 @@ type ButtonType = "button" | "submit" | "reset";
 
 type ButtonVariant = "color" | "normal";
 
-interface DefaultButtonProps {
+interface DeleteButtonProps {
     children: any;
     onClick?: any;
     selected?: boolean;
@@ -12,7 +12,10 @@ interface DefaultButtonProps {
     variant?: ButtonVariant;
 }
 
-export const DefaultButton: React.FC<DefaultButtonProps> = ({
+
+
+
+export const DeleteButton: React.FC<DeleteButtonProps> = ({
     children,
     onClick,
     selected,

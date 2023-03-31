@@ -10,7 +10,7 @@ export const CardForm = () => {
     const methods = useForm();
 
     const {
-        register,
+        
         handleSubmit,
         watch,
         formState: { errors, isSubmitSuccessful },
