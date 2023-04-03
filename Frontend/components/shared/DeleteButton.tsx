@@ -21,7 +21,11 @@ export const DeleteButton: React.FC<DeleteButtonProps> = ({
     return (
         <button
             className={cx(
+<<<<<<< HEAD
                 " h-16 w-16  mt-48 ml-20 flex justify-center items-center  font-bold rounded-2xl transition-all duration-300 ",
+=======
+                " h-16 w-16  mt-52 ml-20 flex justify-center items-center  font-bold rounded-2xl transition-all duration-300 ",
+>>>>>>> dev
                 selected && "border-[#f57c7c]",
                 variant === "color"
                     ? "bg-[#8be686] border-[#8be686]"

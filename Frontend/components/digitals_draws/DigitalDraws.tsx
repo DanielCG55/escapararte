@@ -9,12 +9,21 @@ export const DigitalDraws = () => {
 
     return (
         <>
+<<<<<<< HEAD
             <div className="bg-[url('/azul3.avif')] bg-cover bg-fixed h-full text-[#da5e1c]">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="flex justify-center text-8xl p-16 text-[#da5e1c]">
                         Digital Draws
                     </h1>
                     <h2 className="text-4xl m-16 p-10 text-[#da5e1c]">
+=======
+            <div className="bg-[url('/azul1.avif')] bg-cover bg-fixed h-full text-[#d66016]">
+                <div className="flex flex-col justify-center items-center">
+                    <h1 className="flex justify-center text-8xl p-16 ">
+                        Digital Draws
+                    </h1>
+                    <h2 className="text-4xl m-16 p-10">
+>>>>>>> dev
                         · En esta página, podéis compartir cualquier cosa que
                         hayáis dibujado en una tablet, da igual la fuente de
                         inspiración(Mangas, Animes, Paisajes, Aqrquitectura,
