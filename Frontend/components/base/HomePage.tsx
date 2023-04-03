@@ -6,12 +6,12 @@ export const HomePage = () => {
     return (
         <>
             <Head>
-                <link rel="icon" href="/logo.png" />
+                <link rel="icon" href="" />
                 <title>Escapararte</title>
             </Head>
-            <div className=" bg-blue-900 grid place-items-center  gap-4 p-14 bg-[url('/fondo.jpg')] h-full ">
+            <div className="grid place-items-center  gap-4 p-14 bg-[url('/fondo.jpg')] h-full ">
                 <Link
-                    className="  text-orange-600/80 hover:text-orange-800 text-9xl "
+                    className="  text-[#ce5214eb] hover:text-[#faba8ae2] text-9xl "
                     href={"/"}
                 >
                     EscaparArte
@@ -22,7 +22,7 @@ export const HomePage = () => {
                 >
                     By Daniel Cortina
                 </Link>
-            </div>
+            </div>          
         </>
     );
 };

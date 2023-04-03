@@ -2,19 +2,15 @@ import { FastifyPluginAsync } from "fastify";
 import { CardModel } from "../../models/card_model";
 import { ICard } from "../../types/card";
 
+interface ICardBody extends ICard {}
+
 export const create_card_plugin: FastifyPluginAsync = async (app) => {
     app.post<{
-        Body: ICard;
+        Body: ICardBody;
     }>("/create_card", async (request, reply) => {
-        const { imageSrc, title, author, description, category } = request.body;
+        const cardData = request.body;
 
-        await CardModel.create({
-            imageSrc,
-            title,
-            author,
-            description,
-            category,
-        });
+        await CardModel.create(cardData);
 
         return {
             status: "created",
