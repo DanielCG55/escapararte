@@ -2,7 +2,7 @@ import { CardGeneric } from "@/types/card";
 import { CardForm } from "../forms/CardForm";
 import { useCardList } from "@/hooks/context/useCardList";
 import { deleteCard } from "@/lib/api";
-import { BaseCard } from "../shared/baseCard";
+import { BaseCard } from "../shared/BaseCard";
 
 export const DigitalDraws = () => {
     const { data, mutate } = useCardList("digital");
