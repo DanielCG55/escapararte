@@ -126,4 +126,4 @@ export const BaseCard: React.FC<CardProps> = ({
 
 ## Agradecimientos
 
-A Juanpa por la paciencia
+Quiero agradecer a Juan Pablo Mora por inestimable ayuda y consejos. He disfrutado mucho teniéndole de profesor. Y a mi compañera Saray, después de tantas horas juntos, me siento orgulloso de haber estudiado con ella.
