@@ -2,14 +2,14 @@ import { useCardList } from "@/hooks/context/useCardList";
 import { CardForm } from "../forms/CardForm";
 import { CardGeneric } from "@/types/card";
 import { deleteCard } from "@/lib/api";
-import { BaseCard } from "../shared/BaseCard";
+import { BaseCard } from "../shared/baseCard";
 
 export const PencilDraws = () => {
     const { data, mutate } = useCardList("pencil");
 
     return (
         <>
-            <div className="flex flex-col bg-[url('/lapiz.avif')] bg-fixed bg-cover h-full text-[#000000c2]">
+            <div className="bg-[url('/lapiz.avif')]  bg-cover bg-fixed h-full">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="flex justify-center text-6xl p-16">
                         Pencil Draws

@@ -33,9 +33,9 @@ export const BaseCard: React.FC<CardProps> = ({
             </div>
 
             <div className="border-2 border-transparent box-border">
-                <h1 className="text-6xl m-6">{title}</h1>
-                <h2 className="text-4xl m-12">{author}</h2>
-                <p className="m-16 text-2xl">{description}</p>
+                <h1 className="text-8xl m-6">{title}</h1>
+                <h2 className="text-6xl m-12">{author}</h2>
+                <p className="m-16 text-4xl">{description}</p>
                 <DeleteButton onClick={onClick} />
             </div>
         </div>

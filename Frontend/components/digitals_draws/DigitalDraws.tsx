@@ -2,19 +2,19 @@ import { CardGeneric } from "@/types/card";
 import { CardForm } from "../forms/CardForm";
 import { useCardList } from "@/hooks/context/useCardList";
 import { deleteCard } from "@/lib/api";
-import { BaseCard } from "../shared/BaseCard";
+import { BaseCard } from "../shared/baseCard";
 
 export const DigitalDraws = () => {
     const { data, mutate } = useCardList("digital");
 
     return (
         <>
-            <div className="bg-[url('/azul.webp')] bg-cover bg-fixed h-full text-[#01044d]">
+            <div className="bg-[url('/azul1.avif')] bg-cover bg-fixed h-full text-[#d66016]">
                 <div className="flex flex-col justify-center items-center">
-                    <h1 className="flex justify-center text-8xl p-16 text-[#01044d]">
+                    <h1 className="flex justify-center text-8xl p-16 ">
                         Digital Draws
                     </h1>
-                    <h2 className="text-4xl m-16 p-10 text-[#01044d]">
+                    <h2 className="text-4xl m-16 p-10">
                         · En esta página, podéis compartir cualquier cosa que
                         hayáis dibujado en una tablet, da igual la fuente de
                         inspiración(Mangas, Animes, Paisajes, Aqrquitectura,

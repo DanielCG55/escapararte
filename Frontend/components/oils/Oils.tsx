@@ -2,7 +2,7 @@ import { useCardList } from "@/hooks/context/useCardList";
 import { CardForm } from "../forms/CardForm";
 import { CardGeneric } from "@/types/card";
 import { deleteCard } from "@/lib/api";
-import { BaseCard } from "../shared/BaseCard";
+import { BaseCard } from "../shared/baseCard";
 
 export const Oils = () => {
     const { data, mutate } = useCardList("oil");
