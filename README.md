@@ -1,18 +1,19 @@
 # EscaparArte
 
-> Proyecto Final de CODE CORE School 
+> Proyecto Final de CODE CORE School
 
 ## Indice
 
 <!-- TODO -->
+
 1. [Título de la página](#título-de-la-página)
-2. Imágenes y vídeos
-3. Motivación del proyecto
-4. Manual de instalación
-5. Ejemplos de código
-6. Entornos de ejecución
-7. Listado de paquetes y dependencias
-8. Agradecimientos
+2. [Imágenes y vídeos](#imágenes-y-videos)
+3. [Motivación del proyecto](#motivación-del-proyecto)
+4. [Manual de instalación](#manual-de-instalación)
+5. [Ejemplos de código](#ejemplos-de-código)
+6. [Entornos de ejecución](#entornos-de-ejecución)
+7. [Listado de paquetes y dependencias](#listado-de-paquetes-y-dependencias)
+8. [Agradecimientos](#agradecimientos)
 9. Otras consideraciones
 
 ## Título de la página
@@ -21,21 +22,20 @@ EscaparArte
 
 ## Imágenes y vídeos
 
-
-
 ## Motivación del proyecto
 
 Una de mis aficiones es el dibujo. Mi padre es pintor amateur y tengo amigos de dibujan muy bien, así que pensé en crear una especie de galería virtual, para compartir sus creaciones.
 
 ## Manual de instalación
+
 Manual de instalación y deployment
 Instalación
 
     Clona el repositorio de GitHub en tu equipo local:
 
-    bash
+     bash
 
-git clone https://github.com/tu_usuario/escaparte.git
+    git clone https://github.com/tu_usuario/escaparte.git
 
 Navega al directorio del proyecto:
 
@@ -43,7 +43,7 @@ bash
 
 cd escaparte
 
-Instala las dependencias del proyecto usando el package manager Yarn:
+Instala las dependencias del proyecto usando el packag manager Yarn:
 
     yarn install
 
@@ -51,7 +51,7 @@ Ejecución en entorno local
 
     Para ejecutar la aplicación en un entorno local, puedes usar el siguiente comando:
 
-yarn dev
+     yarn dev
 
 Este comando iniciará el servidor de desarrollo en http://localhost:3000 y abrirá automáticamente la aplicación en tu navegador.
 
@@ -101,7 +101,6 @@ export const BaseCard: React.FC<CardProps> = ({
         </div>
     );
 };
-
 ```
 
 ## Entornos de ejecución
@@ -126,5 +125,5 @@ export const BaseCard: React.FC<CardProps> = ({
     react-dom
 
 ## Agradecimientos
-A Juanpa por la paciencia
 
+A Juanpa por la paciencia
