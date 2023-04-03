@@ -21,7 +21,7 @@
 EscaparArte
 
 ## Imágenes y vídeos
-
+![pantalla](https://user-images.githubusercontent.com/122054483/229470395-73bd06c8-3d07-4000-9b1f-2f1e9da760e4.jpg)
 ## Motivación del proyecto
 
 Una de mis aficiones es el dibujo. Mi padre es pintor amateur y tengo amigos de dibujan muy bien, así que pensé en crear una especie de galería virtual, para compartir sus creaciones.
